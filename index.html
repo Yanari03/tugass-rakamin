@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Registrasi dan List Pendaftar</title>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="tab">
+        <li class="tab-item" id="registrasi-tab">Registrasi</li>
+        <li class="tab-item" id="list-tab">List Pendaftar</li>
+      </ul>
+      <div class="tab-content" id="content">
+        <!-- Tab Registrasi -->
+        <div class="tab-pane active" id="registrasi-content">
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                minlength="10"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="umur">Umur</label>
+              <input
+                type="number"
+                class="form-control"
+                id="umur"
+                name="umur"
+                min="25"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="uangSangu">Uang Sangu (Rp)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="uangSangu"
+                name="uangSangu"
+                min="100000"
+                max="1000000"
+                required
+              />
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+        <!-- Tab List Pendaftar -->
+        <div class="tab-pane" id="list-content">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Uang Sangu (Rp)</th>
+              </tr>
+            </thead>
+            <tbody id="pendaftarTableBody">
+              <!-- Data pendaftar akan ditampilkan di sini -->
+            </tbody>
+          </table>
+          <p>
+            Rata-rata pendaftar memiliki uang sangu sebesar
+            <span id="rataRataUangSangu"></span> dengan rata-rata umur
+            <span id="rataRataUmur"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
